@@ -3,6 +3,11 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route("/")
+def boas_vindas():
+    
+    return "<h1>Doar Livros - Venha doar livros para o Vai na Web!</h1>"
+
 def init_db():
     with sqlite3.connect("database.db") as conn:
         conn.execute(
